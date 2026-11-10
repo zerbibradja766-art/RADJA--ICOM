@@ -37,7 +37,7 @@
   {
     "id": 5,
     "img": "img/product/5..jpg",
-    "name": "SPORTS BAG",
+    "name": " BAGS",
     "price": 280,
     "catetory":"Sports"
   },
@@ -59,7 +59,7 @@
   {
     "id": 8,
     "img": "img/product/8..jpg",
-    "name": "NOTE BOOCK",
+    "name": "NOTE BOOK",
     "price": 320,
     "catetory":"accessories"
   },
@@ -74,14 +74,14 @@
   {
     "id": 10,
     "img": "img/product/10..jpg",
-    "name": "LES LASTIQUE1",
+    "name": "elastic band sport",
     "price": 300,
     "catetory":"equipement"
   },
   {
     "id": 11,
     "img": "img/product/11..jpg",
-    "name": "LES LASTIQUE2",
+    "name": "elastic band sport",
     "price": 260,
     "old_price": 300,
     "catetory":"equipement"

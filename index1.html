@@ -1,146 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #e0e0e0;
-    --light: #c4c4c0;
-    --dark: #759075;
-    --text: #0fc62e;
-    --muted: #0ab445;
-    --accent: #a0001c;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    background: var(--bg);
-    font-family: "Poppins", system-ui, sans-serif;
-    color: var(--text);
-    padding: 20px;
-  }
-  .circle {
-    width: min(480px, 92vw);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--bg);
-    box-shadow: 18px 18px 36px var(--dark), -18px -18px 36px var(--light);
-    display: grid;
-    place-items: center;
-  }
-  .login {
-    width: 72%;
-    text-align: center;
-  }
-  h1 { font-size: 2.2rem; font-weight: 700; }
-  .subtitle { font-size: .85rem; color: var(--muted); margin: 4px 0 22px; }
-
-  .field {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0 16px;
-    height: 46px;
-    margin-bottom: 16px;
-    border-radius: 12px;
-    background: var(--bg);
-    box-shadow: inset 4px 4px 8px var(--dark), inset -4px -4px 8px var(--light);
-    border: 2px solid transparent;
-    transition: border-color .2s;
-  }
-  .field:focus-within { border-color: rgba(160, 0, 28, .45); }
-  .field svg { width: 16px; height: 16px; fill: var(--muted); flex: none; transition: fill .2s; }
-  .field:focus-within svg { fill: var(--accent); }
-  .field input {
-    flex: 1;
-    min-width: 0;
-    border: none;
-    outline: none;
-    background: transparent;
-    font: inherit;
-    font-size: .9rem;
-    color: var(--text);
-  }
-  .field input::placeholder { color: #8a8a8a; }
-  .field.error { border-color: var(--accent); }
-
-  .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: .78rem;
-    margin: 4px 0 20px;
-  }
-  .remember { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--muted); }
-  .remember input { display: none; }
-  .switch {
-    width: 38px; height: 20px;
-    border-radius: 20px;
-    background: var(--bg);
-    box-shadow: inset 2px 2px 4px var(--dark), inset -2px -2px 4px var(--light);
-    position: relative;
-  }
-  .switch::after {
-    content: "";
-    position: absolute;
-    top: 3px; left: 3px;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: var(--bg);
-    box-shadow: 1px 1px 3px var(--dark), -1px -1px 3px var(--light);
-    transition: transform .25s, background .25s;
-  }
-  .remember input:checked + .switch::after { transform: translateX(18px); background: var(--accent); }
-  .remember input:focus-visible + .switch { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .options a { color: var(--muted); text-decoration: none; }
-  .options a:hover { color: var(--accent); }
-
-  button {
-    width: 100%;
-    height: 46px;
-    border: none;
-    border-radius: 12px;
-    background: var(--bg);
-    font: inherit;
-    font-weight: 600;
-    letter-spacing: .06em;
-    color: var(--text);
-    cursor: pointer;
-    box-shadow: 6px 6px 12px var(--dark), -6px -6px 12px var(--light);
-    transition: box-shadow .15s;
-  }
-  button:active { box-shadow: inset 4px 4px 8px var(--dark), inset -4px -4px 8px var(--light); }
-  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-  .message { min-height: 18px; font-size: .78rem; margin-top: 10px; color: var(--accent); }
-  .message.ok { color: #1b6e2f; }
-  .signup { font-size: .8rem; color: var(--muted); margin-top: 8px; }
-  .signup a { color: var(--accent); font-weight: 600; text-decoration: none; }
-
-  @media (max-width: 420px) {
-    .login { width: 80%; }
-    h1 { font-size: 1.8rem; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RADJA | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
+
   <div class="circle">
     <form class="login" id="loginForm" novalidate>
-      <h1>Login</h1>
-      <p class="subtitle">Sign in to your account</p>
+      <h1>Welcome Back!</h1>
+      <p class="subtitle">Login to your account</p>
 
       <label class="field" id="userField">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg>
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z" />
+        </svg>
         <input type="text" id="username" placeholder="Username" autocomplete="username">
       </label>
 
       <label class="field" id="passField">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 0 1 6 0v2H9V6z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 0 1 6 0v2H9V6z" />
+        </svg>
         <input type="password" id="password" placeholder="Password" autocomplete="current-password">
       </label>
 
@@ -150,46 +40,89 @@
           <span class="switch"></span>
           Remember me
         </label>
-        <a href="#">Forgot password?</a>
+        <a href="#" id="forgotPassword">Forgot password?</a>
       </div>
 
-      <button type="submit">SIGN IN</button>
+      <button type="submit">
+        SIGN IN
+      </button>
       <p class="message" id="message" role="alert"></p>
-      <p class="signup">Don't have an account? <a href="index.html">Sign up</a></p>
+      <p class="signup">
+        Don't have an account?
+        <a href="signup.html">Sign up</a>
+      </p>
+
+      <a href="index.html" class="back-home">
+        ← Back to Home
+      </a>
     </form>
   </div>
 
-<script>
-  const form = document.getElementById("loginForm");
-  const username = document.getElementById("username");
-  const password = document.getElementById("password");
-  const userField = document.getElementById("userField");
-  const passField = document.getElementById("passField");
-  const message = document.getElementById("message");
+  <script>
+    (function () {
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    userField.classList.toggle("error", !username.value.trim());
-    passField.classList.toggle("error", !password.value);
-    message.className = "message";
+      const loginFormEl = document.getElementById("loginForm");
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
 
-    if (!username.value.trim() || !password.value) {
-      message.textContent = "Please enter your username and password.";
-      return;
-    }
-    if (password.value.length < 6) {
-      passField.classList.add("error");
-      message.textContent = "Password must be at least 6 characters.";
-      return;
-    }
-    message.classList.add("ok");
-    message.textContent = "Signed in successfully!";
-    // TODO: send the data to your server here (fetch / form action)
-  });
+      const userFieldEl = document.getElementById("userField");
+      const passFieldEl = document.getElementById("passField");
 
-  [username, password].forEach((input) => {
-    input.addEventListener("input", () => input.closest(".field").classList.remove("error"));
-  });
-</script>
+      const loginMessageEl = document.getElementById("message");
+
+      loginFormEl.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const usernameValue = usernameInput.value.trim();
+        const passwordValue = passwordInput.value;
+
+        userFieldEl.classList.toggle("error", !usernameValue);
+        passFieldEl.classList.toggle("error", !passwordValue);
+
+        loginMessageEl.className = "message";
+
+        if (!usernameValue || !passwordValue) {
+          loginMessageEl.textContent =
+            "Please enter your username and password.";
+          return;
+        }
+
+        if (passwordValue.length < 6) {
+          passFieldEl.classList.add("error");
+
+          loginMessageEl.textContent =
+            "Password must be at least 6 characters.";
+          return;
+        }
+
+        loginMessageEl.classList.add("ok");
+        loginMessageEl.textContent =
+          "Signed in successfully!";
+
+      });
+
+      [usernameInput, passwordInput].forEach(function (inputElement) {
+
+        inputElement.addEventListener("input", function () {
+
+          inputElement.closest(".field").classList.remove("error");
+          loginMessageEl.textContent = "";
+          loginMessageEl.className = "message";
+
+        });
+
+      });
+
+      document.getElementById("forgotPassword").addEventListener("click", function (event) {
+        event.preventDefault();
+        loginMessageEl.className = "message";
+        loginMessageEl.textContent = "Please contact support to reset your password.";
+      });
+
+    })();
+  </script>
+
 </body>
+
 </html>
